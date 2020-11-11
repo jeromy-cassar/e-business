@@ -1,0 +1,917 @@
+/*Fonts*/
+@font-face {
+    font-family: header;
+    src: url(../fonts/comfortaa.ttf);
+}
+
+/*End of Fonts*/
+/*Website Layout*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:
+        160px
+        /*header*/
+        1fr
+        /*body*/
+        80px;
+    /*footer*/
+    grid-template-areas:
+        "header"
+        "body"
+        "footer";
+    min-height: 100%;
+}
+
+header {
+    grid-area: header;
+    top: 0;
+    position: sticky;
+    color: white;
+    display: grid;
+    grid-template-rows:
+        110px 50px;
+    grid-template-areas:
+        "logo"
+        "nav-bar";
+    font-family: header;
+}
+
+body {
+    grid-area: body;
+    background-color: white;
+}
+
+footer {
+    background-color: rgb(175, 86, 92);
+    grid-area: footer;
+    padding: 1rem;
+    font-family: header;
+}
+
+/*End of Website Layout*/
+
+/*Header Layout*/
+/*top*/
+.top {
+    grid-area: logo;
+    background-color: #DD959A;
+}
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow: auto;
+}
+
+#greeting {
+    text-align: right;
+    float: right;
+    padding-right: 5px;
+    color: white;
+}
+
+td {
+    width: 33%;
+}
+
+#header-table {
+    width: 100%;
+    height: 50px;
+}
+
+/*navigation*/
+.nav-bar {
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(194, 115, 120);
+}
+
+/*Navigation Bar Styles*/
+.nav-bar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: header;
+    transition-duration: 0.5s;
+    margin-right: 8px;
+    border-bottom: 3px solid rgb(194, 115, 120);
+}
+
+.nav-bar a:hover:not(.cart-link) {
+    background-color: rgb(117, 54, 58);
+    transition-duration: 0.5s;
+    border-bottom: 3px solid white;
+}
+
+.cart-wrapper {
+    font-size: 8pt;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 22px;
+}
+
+.cart-link {
+    padding: 6px 14px !important;
+    transition-duration: 0.8s;
+    position: relative;
+    bottom: 1.6px;
+    border-bottom: 3px solid rgb(194, 115, 120);
+}
+
+.cart-link:hover {
+    background-color: rgb(117, 54, 58);
+    transition-duration: 0.8s;
+    border-bottom: 3px solid white;
+}
+
+#cart {
+    display: inline-block;
+    padding: 0;
+    transition-duration: 0.8s;
+    position: relative;
+    bottom: 2px;
+}
+
+#cart-num {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 7px;
+    vertical-align: top;
+
+    margin-top: -5px;
+    margin-left: -5px;
+    right: 0;
+    left: 16px;
+    position: relative;
+    z-index: 2;
+}
+
+.middle {
+    text-align: center;
+}
+
+#search {
+    padding-top: 2px !important;
+}
+
+#search-bar {
+    font-family: header;
+    border-radius: 27px;
+    border: 1.5px solid rgb(161, 51, 75);
+    height: 15px !important;
+    padding-left: 10px !important;
+    color: rgb(231, 101, 129);
+    width: 230px !important;
+    transition-duration: 0.5s;
+    font-size: 10pt !important;
+}
+
+#search-bar:hover {
+    background-color: rgb(243, 243, 243);
+    transition-duration: 0.5s;
+}
+
+#search-bar::placeholder {
+    color: #913131;
+}
+
+.topnav-right {
+    float: right;
+}
+
+.nav-bar a:focus, .nav-bar input[type=text]:focus{
+  outline:none;
+}
+
+.topnav-centered a {
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.topnav-centered input[type=text] {
+    position: absolute;
+    left: 43%;
+    padding: 15px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+}
+
+/* Responsive navigation menu (for mobile devices) */
+@media screen and (max-width: 600px) {
+
+    .nav-bar a,
+    .topnav-right {
+        float: none;
+        display: block;
+    }
+
+    .topnav-centered a {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+}
+
+/*End of Navigation Bar Styles*/
+/*End of Header Layout*/
+/*Body Layout*/
+body {
+    background-color: white;
+    font-family: sans-serif;
+    font-size: 12pt;
+    width: 100%;
+}
+
+#content-table {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.body-spacing {
+    width: 10%;
+}
+
+.body-content {
+    width: 80%;
+}
+
+/*End of Body Layout*/
+/*Footer Layout*/
+.footer-bar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 10pt;
+    transition-duration: 0.5s;
+    margin-right: 5px;
+}
+
+#right {
+    float: right;
+    padding: 10px;
+}
+
+.footer-bar li {
+    list-style-type: none;
+}
+
+.footer-bar li a:hover {
+    transition-duration: 0.5s;
+    text-decoration: underline;
+}
+
+#right {
+    float: right;
+    padding: 5px !important;
+    margin: 2px !important;
+}
+
+#right:hover {
+    transition-duration: 0.5s;
+    background-color: rgb(117, 54, 58);
+}
+
+/*End of Footer Layout*/
+
+/*Individual Product Styles*/
+.prod-wrapper {
+    margin: 0 auto;
+}
+
+.prod-container {
+    overflow-wrap: break-word;
+    display: grid;
+    grid-template-columns: 220px 560px;
+    grid-template-rows: auto;
+    grid-template-areas: "left right";
+    color: rgb(175, 86, 92);
+}
+
+#prod-right {
+    padding: 10px 10px 10px 10px;
+    grid-area: right;
+}
+
+#prod-left {
+    padding: 10px 10px 10px 10px;
+    grid-area: left;
+}
+
+.prod-desc {
+    margin-bottom: 50px;
+}
+
+.prod-price {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.prod-themes,
+.artist-name {
+    font-size: 10pt;
+    font-family: header;
+    color: black
+}
+
+/*End of Individual Product Styles*/
+
+/*Input/Button Styles*/
+.btn {
+    text-decoration: none;
+    font-size: 10pt;
+    padding: 8px 12px 8px 12px;
+    background-color: rgb(175, 86, 92);
+    color: white;
+    border: 2px solid rgb(175, 86, 92);
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: header;
+
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background-color: white;
+    color: rgb(175, 86, 92);
+    font-weight: 400;
+    border: 2px solid rgb(175, 86, 92);
+    border-radius: 5px;
+
+    transition: 0.4s;
+}
+
+/*End of Input/Button Styles*/
+
+/*Login Styles*/
+.login-form {
+    display: grid;
+    place-items: center;
+    padding: 10px;
+}
+
+.body-content h2 {
+    text-align: center;
+}
+
+.login-form,
+.body-content h2,
+.register-form,
+.contact-us-form {
+    font-family: header;
+    color: rgb(175, 86, 92);
+}
+
+.login-form input,
+.register-form input,
+.contact-us-form input,
+.contact-us-form textarea {
+    border: 1px solid rgb(175, 86, 92);
+    padding: 3px 5px;
+    border-radius: 5px;
+    transition: 0.6s;
+}
+
+.login-form input:hover,
+.register-form input:hover,
+.contact-us-form input:hover,
+.contact-us-form textarea:hover {
+    background-color: rgb(249, 221, 224);
+    transition: 0.6s;
+}
+
+.login-form input[type=text]:focus,
+.register-form input:focus,
+.contact-us-form input:focus,
+.contact-us-form textarea:focus {
+    outline: none;
+    background-color: white;
+}
+
+/*End of Login Styles*/
+
+/*Register Styles*/
+.register-form {
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.register-form label {
+    display: table;
+    margin-right: 5px;
+    align-content: left;
+}
+
+.register-form input {
+    display: table;
+    align-content: right;
+}
+
+#email {
+    width: 250px;
+}
+
+[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+/*End of Register Styles*/
+
+/*Home Styles*/
+#home-label {
+    font-family: header;
+    color: rgb(175, 86, 92);
+    text-align: center;
+}
+
+#home-Title {
+    font-family: header;
+    color: rgb(175, 86, 92);
+    font-size: 16pt;
+    text-align: center;
+}
+
+.home-table {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-family: header;
+    color: rgb(175, 86, 92);
+    font-size: 10pt;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.home-table label {
+    display: table;
+    margin-right: 5px;
+    align-content: center;
+    text-align: center;
+}
+
+.home-des {
+    width: 50%;
+    align-content: center;
+    text-align: center;
+}
+
+/*End of Home Styles*/
+
+/*Products Page Styles*/
+.products-table {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-family: header;
+    color: rgb(175, 86, 92);
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.products-table img {
+    cursor: pointer;
+}
+
+.products-table a {
+    text-decoration: none;
+    color: rgb(175, 86, 92);
+}
+
+.product-item {
+    margin: 20px;
+    z-index: -1;
+    transition-duration: 0.25s;
+}
+
+.product-item:hover {
+    box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, 0.7);
+    transition-duration: 0.25s;
+}
+
+#product-size {
+    width: 200px;
+    height: 200px;
+}
+
+/*End of Products Page Style*/
+
+/*About Us Page Styles*/
+h3 {
+    font-family: header;
+    font-weight: bold;
+    color: rgb(175, 86, 92);
+    text-align: center;
+}
+
+.italic {
+    font-style: italic;
+    font-family: header;
+    color: rgb(175, 86, 92);
+}
+
+p,
+.italic,
+.dot-point {
+    font-family: header;
+    color: rgb(175, 86, 92);
+}
+
+#fontcolour {
+    font-family: header;
+    color: rgb(175, 86, 92);
+}
+
+.dot-point {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.dot-point span {
+    color: rgb(175, 86, 92);
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+/*End of About Us Page Styles*/
+
+/*Contact Us Page Styles*/
+.contact-us-form {
+    display: grid;
+    place-items: center;
+}
+
+.contact-us-form .btn {
+    width: 120px;
+}
+
+.contact-center {
+    align-content: center;
+}
+
+/*End of Contact Us Page Styles*/
+/*Artist Page Layouts*/
+h4 {
+    font-family: header;
+    font-weight: bold;
+    color: rgb(175, 86, 92);
+}
+
+.link {
+    border: none;
+    background-color: white;
+    color: rgb(175, 86, 92);
+    font-family: header;
+    font-weight: bold;
+    font-size: 14pt;
+    transition-duration: 0.5s;
+    border: 1px solid white;
+    margin: 5px 0;
+    padding: 10px 5px;
+}
+
+.link:hover {
+    cursor: pointer;
+    transition-duration: 0.5s;
+    border: 1px solid rgb(175, 86, 92);
+}
+
+.link:focus {
+    outline: none;
+}
+
+.artist {
+    width: 1000px;
+}
+
+#artist-left {
+    text-align: center;
+}
+
+#artist-right {
+    text-align: center;
+}
+
+#artist-left,
+#artist-right {
+    margin: 0;
+}
+
+.their-work {
+    margin: 0 auto;
+    color: rgb(175, 86, 92);
+    font-family: header;
+    text-align: center;
+}
+
+/*End of Artist Page Layouts*/
+/*Cart Page Layouts*/
+.cart-item {
+    color: rgb(175, 86, 92);
+    font-family: header;
+    word-wrap: normal;
+    background-color: white;
+    border: 1px solid rgb(175, 86, 92);
+    border-radius: 10px;
+    padding: 5px 8px;
+}
+
+.cart-btn {
+    color: rgb(175, 86, 92);
+    font-family: header;
+    word-wrap: normal;
+    background-color: white;
+    border: 1px solid rgb(175, 86, 92);
+    border-radius: 10px;
+    padding: 5px 8px;
+    width: auto;
+}
+
+.cart-row {
+    width: auto;
+}
+
+.cart-details {
+    text-align: left;
+    word-break: normal;
+    width: 300px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.cart-img {
+    width: 100px;
+}
+
+.cart-item {
+    margin-bottom: 9px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cart-price {
+    text-align: center;
+    width: 60px;
+    font-size: 15pt;
+}
+
+.cart-delete {
+    width: 20px;
+}
+
+.cart-delete img {
+    margin: 0 auto;
+}
+
+.delete {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.delete:focus {
+    outline: none;
+}
+
+.checkout-btn {
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+}
+
+.checkout-btn .btn {
+    padding: 15px 10px !important;
+}
+
+.cart-prices {
+    margin-left: 700px;
+}
+
+#h3-cart {
+    text-align: right;
+}
+
+/*End of Cart Page Layouts*/
+
+/*Receipt Page Layout*/
+
+.receipt-details {
+    text-align: left;
+    word-break: normal;
+    width: 400px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom: 1px solid rgb(175, 86, 92);
+}
+
+.recipt-price {
+    text-align: center;
+    width: 60px;
+    font-size: 15pt;
+    border-bottom: 1px solid rgb(175, 86, 92);
+}
+
+.receipt-customer {
+    text-align: left;
+    word-break: normal;
+    width: 200px;
+    padding-left: 5px;
+    padding-right: 5px;
+    float: right;
+
+}
+
+receipt-head {
+    background-color: white;
+    text-align: left;
+    word-break: normal;
+    width: 200px;
+    padding-left: 5px;
+    padding-right: 5px;
+    float: right;
+
+}
+
+.receipt-label {
+    color: white;
+}
+
+.receipt {
+    margin-bottom: 9px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(175, 86, 92);
+    font-family: header;
+    word-wrap: normal;
+    border: 1px solid rgb(175, 86, 92);
+}
+
+
+/*Cart Page Layouts end*/
+/*Home Page regform Layout*/
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+    background-color: #af565c;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    left: 0;
+    right: auto;
+    top: 0;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+   left: 0;
+    right: auto;
+    border: 3px solid #af565c;
+    z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-reg {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+/* Full-width input fields */
+.form-reg input[type=text],
+.form-reg input[type=email] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    max-width: 200px;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-reg input[type=text]:focus,
+.form-reg input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+    max-width: 200px;
+    padding: 16px 20px;
+}
+
+/* Set a style for the submit/login button */
+.form-reg .btn {
+    background-color: #af565c;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-reg .cancelreg {
+    background-color: #af565c;
+}
+
+/* Add some hover effects to buttons */
+.form-reg .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+/* search results */
+.searchresult{
+    max-width: 200px;
+    padding: 10px;
+    background-color: white;
+    position:relative;
+    text-align:center;
+    visibility: collapse;
+    left: 43%;
+    width
+    background: white;
+    border: 3px solid #af565c;
+    border-radius: 5px;
+}
+
+.searchresult input[type=text],
+.searchresult input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    max-width: 200px;
+    border: none;
+    background: #f1f1f1;
+}
+.FormResult{
+    visibility: hidden;
+}
+
+.search_lnk{
+    font-family: header;
+    color: rgb(175, 86, 92);
+    text-align: center;
+    padding-bottom: 5px;
+}
+/*Sitemap Styles*/
+.sitemap-table{
+  display:grid;
+  place-items:center;
+  font-family:header;
+}
+.sitemap-table td{
+  height:50px;
+  width:120px;
+  padding:5px 10px;
+}
+.sitemap-table td a, .sitemap-table th{
+color:rgb(175, 86, 92);
+text-decoration:none;
+}
+.sitemap-table tr{
+  height:50px;
+}
+.sitemap-table td a:hover{
+  text-decoration:underline;
+}
+/*End of Sitemap Styles*/
